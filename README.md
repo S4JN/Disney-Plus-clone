@@ -1,6 +1,6 @@
 # Disney Plus Ui Clone
 
-####With Login ,Main, Detail Component.
+###With Login ,Main, Detail Component.
 
 
 ![Capture1111](https://user-images.githubusercontent.com/93881028/198877850-13354d31-7329-45b1-9376-7e26a39f2583.PNG)
