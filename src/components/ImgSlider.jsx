@@ -5,30 +5,36 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function ImgSlider() {
-  
-    let settings={
+
+    let settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slideToShow: 1,
         autoplay: true
     }
-  
+
     return (
-    <Carousel {...settings}>
-        <Wrap>
-            <img src='/images/slider-badging.jpg' alt='imae' />
-        </Wrap>
-        <Wrap>
-            <img src='/images/slider-badag.jpg' alt="imae" />
-        </Wrap>
-    </Carousel>
-  )
+        <Carousel {...settings}>
+            <Wrap>
+                <img src='/images/slider-badging.jpg' alt='imae' />
+            </Wrap>
+            <Wrap>
+                <img src='/images/slider-badag.jpg' alt="imae" />
+            </Wrap>
+            <Wrap>
+                <img src='/images/slider-scale.jpg' alt="imae" />
+            </Wrap>
+            <Wrap>
+            <img src='/images/slider-scales.jpg' alt="imae" />
+            </Wrap>
+        </Carousel>
+    )
 }
 
 export default ImgSlider
 
-const Carousel =styled(Slider)`
+const Carousel = styled(Slider)`
     margin-top: 20px;
     ul li button{
         &:before{

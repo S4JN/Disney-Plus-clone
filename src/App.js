@@ -18,14 +18,15 @@ function App() {
       <Router>
         <Header />
         <Switch>
-        <Route path="/login">
-          <Login />
+        <Route  path="/home">
+        <Home />
         </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/">
-            <Home />
+          <Login />
+            
           </Route>
         </Switch>
       </Router>

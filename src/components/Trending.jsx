@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectTrending } from "../features/movie/movieSlice"
 
 function Trending() {
     // function refreshPage() {
     //     window.location.reload(false);
     //   }
+    const movies = useSelector(selectTrending);
+
 
 
     return (
@@ -13,31 +17,19 @@ function Trending() {
             <h4>Trending</h4>
 
             <Content>
+                {
+                    movies && movies.map((movie, key) => (
+                        <Wrap key={key}>
 
-                <Wrap>
-                    <Link to="/">
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to="/">
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to="/">
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to="/">
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg" />
-                    </Link>
-                </Wrap>
-                
-                
+                            <BrowserRouter forceRefresh={true}>
+                                <Link to={`/detail/${movie.id}`}>
+                                    <img src={movie.cardImg} alt={movie.title} />
+                                </Link>
+                            </BrowserRouter>
 
-
+                        </Wrap>
+                    ))
+                }
             </Content>
         </Container>
     )
