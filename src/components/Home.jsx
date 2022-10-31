@@ -18,11 +18,14 @@ function Home() {
   let originals = [];
   let trending = [];
 
+////////////////////////////////idhr dkt aari h///////////////////////////
+
+console.log("hello");
   useEffect(() => {
-    console.log("hello");
     db.collection("movies").onSnapshot((snapshot) => {
      let tempMovies= snapshot.docs.map((doc) => {
         //console.log(recommends);
+        
         switch (doc.data().type) {
           case "recommend":
             recommends = [...recommends, { id: doc.id, ...doc.data() }];
@@ -41,6 +44,7 @@ function Home() {
             break;
         }
       });
+      
 //
       dispatch(
         setMovies({
